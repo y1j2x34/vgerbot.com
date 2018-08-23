@@ -39,3 +39,53 @@
 JAVA, .NET, C/C++, Ruby, Python, PHP ...
 
 ## 案例
+
+## Spring AOP
+
+### 切面表达式
+
+```dot {engine="dot"}
+digraph G {
+expression -> designators
+expression -> wildcards
+expression -> operators
+designators -> "execution()"
+designators -> "..."
+wildcards -> "*"
+wildcards -> "+"
+wildcards -> ".."
+operators -> "&&"
+operators -> "||"
+operators -> "!"
+}
+```
+
+### wildcards（通配符）
+
+- \* 匹配任意数量的字符
+- \+ 匹配指定类以及子类
+- .. 用于匹配任意数的子包或参数
+
+### operators（运算符）
+
+- && 与操作符
+- || 或操作符
+- ! 非操作符
+
+### designators（指示器）
+
+- 匹配方法
+    + `execution()` 执行流，使用通配符筛选方法
+- 匹配注解
+    + `@target()`
+    + `@args()`
+    + `@within()`
+    + `@annotation()`
+- 匹配包/类型
+    + `within()`
+- 匹配对象
+    + `this()`
+    + `bean()`
+    + `target()`
+- 匹配参数
+    - `args()`
