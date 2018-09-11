@@ -236,3 +236,30 @@ public Object around(ProceedingJoinPoint jp){
 }
 
 ```
+
+### 代理选择
+
+- 如果目标对象实现了接口，则默认采用JDK动态代理
+- 如果目标对象没有实现接口， 这采用CGLIB进行动态代理
+- 如果目标对象实现了接口，且强制CGLIB代理，则使用CGLIB代理
+
+强制使用CGLIB的方法
+
+```java
+
+@SpringBootApplication
+@EnableAspectJAutoProxy(proxtTargetClass = true)
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+```
+
+## 相关设计模式
+
+### 代理模式
+
+### 责任链模式
+
+## 实现
