@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<cross-domain-policy>
-<allow-access-from domain="*.vgerbot.com"/>
-<allow-http-request-headers-from domain="*.vgerbot.com" headers="*"/>
-</cross-domain-policy>
